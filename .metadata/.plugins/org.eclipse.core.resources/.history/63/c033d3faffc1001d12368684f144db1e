@@ -1,0 +1,32 @@
+package Filmes;
+
+import java.util.Arrays;
+
+public class Biblioteca {
+
+	private Filme[] filmes;
+
+	public Biblioteca(Filme[] filmes) {
+		this.filmes = filmes;
+	}
+	
+	public Filme[] listaFilmes() {
+		for (Filme filme : filmes) {
+			return filme;
+		}
+	}
+
+	public void adicionaFilme(Filme filme) {
+		
+	}
+	
+	public void removeFilme(Filme filme) {
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "Biblioteca [filmes=" + Arrays.toString(filmes) + "]";
+	}
+	
+}

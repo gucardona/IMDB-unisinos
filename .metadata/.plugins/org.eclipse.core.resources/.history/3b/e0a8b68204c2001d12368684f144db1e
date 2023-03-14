@@ -1,0 +1,32 @@
+package Filmes;
+
+import java.util.Arrays;
+
+public class Biblioteca {
+	
+	public void listaFilmes() {
+		for (Filme filme : Filme[] filmes) {
+			System.out.println(filme);
+		}
+	}
+
+	public void adicionaFilme(Filme filme) {
+		for (int i = 0; i < filmes.length; i++) {
+			if(filmes[i] == null)
+				filmes[i] = filme;
+		}
+	}
+	
+	public void removeFilme(Filme filme) {
+		for(int i = 0; i < filmes.length; i++) {
+			if(filmes[i].getCodigo().equalsIgnoreCase(filme.getCodigo()))
+				filmes[i] = null;
+		}
+	}
+	
+	@Override
+	public String toString() {
+		return "Biblioteca [filmes=" + Arrays.toString(filmes) + "]";
+	}
+	
+}

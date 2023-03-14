@@ -1,0 +1,7 @@
+package Filmes.teste;
+
+public class BibliotecaTeste {
+	public static void main(String[] args) {
+		Biblioteca b1 = new Biblioteca();
+	}
+}

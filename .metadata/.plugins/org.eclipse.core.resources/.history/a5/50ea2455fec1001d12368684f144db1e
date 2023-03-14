@@ -1,0 +1,33 @@
+package Filmes;
+
+public class Filmes {
+	private String codigo, nomeDoFilme, diretor;
+	private int ano;
+	private enum tipo;
+	private String[] principaisAtores;
+	
+	public void Filmes() {
+		
+	}
+	
+	public String getCodigo() {
+		return codigo;
+	}
+	public String getNomeDoFilme() {
+		return nomeDoFilme;
+	}
+	public String getDiretor() {
+		return diretor;
+	}
+	public int getAno() {
+		return ano;
+	}
+	public char getTipo() {
+		return tipo;
+	}
+	public String[] getPrincipaisAtores() {
+		return principaisAtores;
+	}
+	
+	
+}
