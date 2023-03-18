@@ -49,15 +49,5 @@ public class Filme {
 				"[ # " + tipo + " - código " + codigo + " # ]\n\nNome: " + nomeDoFilme + "\nDiretor: " + diretor + "\nAno de lançamento: " + ano
 				+ "\nPrincipais atores:" + Arrays.toString(principaisAtores) + 
 				"\n=======================================================================================\n";
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 }
