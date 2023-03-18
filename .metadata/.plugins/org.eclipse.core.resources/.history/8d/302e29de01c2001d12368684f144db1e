@@ -1,7 +1,0 @@
-package Filmes.teste;
-
-public class FilmesTeste {
-	public static void main(String[] args) {
-		
-	}
-}
