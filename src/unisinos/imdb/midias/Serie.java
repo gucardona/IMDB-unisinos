@@ -1,4 +1,4 @@
-package unisinos.imdb.classes;
+package unisinos.imdb.midias;
 
 public class Serie extends Audiovisual {
 
@@ -30,7 +30,7 @@ public class Serie extends Audiovisual {
 
 	@Override
 	public String toString() {
-		return "{ # SERIE: temporadas=" + temporadas + "episodios=" + episodios + super.toString() +
+		return "{ # SERIE: temporadas=" + temporadas + " episodios=" + episodios + super.toString() +
 				" # }";
 	}
 }

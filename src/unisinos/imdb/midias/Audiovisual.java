@@ -1,4 +1,4 @@
-package unisinos.imdb.classes;
+package unisinos.imdb.midias;
 
 import java.util.Arrays;
 
@@ -9,7 +9,7 @@ public abstract class Audiovisual {
 	private String[] principaisAtores;
 
 	public Audiovisual(String codigo, String nomeDoFilme, String diretor, int ano, Genero genero,
-			String[] principaisAtores) {
+					   String[] principaisAtores) {
 
 		this.codigo = codigo;
 		this.nomeDoFilme = nomeDoFilme;

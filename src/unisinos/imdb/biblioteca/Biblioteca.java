@@ -1,4 +1,6 @@
-package unisinos.imdb.classes;
+package unisinos.imdb.biblioteca;
+
+import unisinos.imdb.midias.Audiovisual;
 
 import java.util.Arrays;
 
@@ -22,35 +24,35 @@ public class Biblioteca {
         }
     }
 
-    public void ordenaMidias() {
-        for (int i = 0; i < filmes_e_series.length; i++) {
-            for (int j = i + 1; j < filmes_e_series.length; j++) {
-                if (filmes_e_series[i] == null) {
-                    filmes_e_series[i] = filmes_e_series[j];
-                    filmes_e_series[j] = null;
-                }
-
-            }
-        }
-    }
-
     public void adicionaMidia(Audiovisual midia) {
         for (int i = 0; i < filmes_e_series.length; i++) {
-            if(filmes_e_series[i] == null) {
+            if (filmes_e_series[i] == null) {
                 filmes_e_series[i] = midia;
                 break;
             }
         }
     }
 
-    public void removeMidia(Audiovisual filmeOuSerie) {
+    public void removeMidia(Audiovisual midia) {
         for (int i = 0; i < filmes_e_series.length; i++) {
-            if (filmes_e_series[i].getCodigo().equalsIgnoreCase(filmeOuSerie.getCodigo())) {
+            if (filmes_e_series[i] != null && filmes_e_series[i].equals(midia)) {
                 filmes_e_series[i] = null;
                 break;
             }
         }
     }
+
+    //    public void ordenaMidias() {
+//        for (int i = 0; i < filmes_e_series.length; i++) {
+//            for (int j = i + 1; j < filmes_e_series.length; j++) {
+//                if (filmes_e_series[i] == null) {
+//                    filmes_e_series[i] = filmes_e_series[j];
+//                    filmes_e_series[j] = null;
+//                }
+//
+//            }
+//        }
+//    }
 
     public Audiovisual[] getMidia() {
         return filmes_e_series;
