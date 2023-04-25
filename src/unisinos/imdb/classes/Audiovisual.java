@@ -1,5 +1,7 @@
 package unisinos.imdb.classes;
 
+import java.util.Arrays;
+
 public abstract class Audiovisual {
 	private String codigo, nomeDoFilme, diretor;
 	private int ano;
@@ -47,6 +49,11 @@ public abstract class Audiovisual {
 
 	@Override
 	public String toString() {
-		return super.toString();
+		return "codigo='" + codigo + '\'' +
+				", nomeDoFilme='" + nomeDoFilme + '\'' +
+				", diretor='" + diretor + '\'' +
+				", ano=" + ano +
+				", genero=" + genero +
+				", principaisAtores=" + Arrays.toString(principaisAtores);
 	}
 }

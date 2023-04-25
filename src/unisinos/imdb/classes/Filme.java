@@ -21,6 +21,7 @@ public class Filme extends Audiovisual {
 
 	@Override
 	public String toString() {
-		return super.toString();
+		return "{ # FILME: duracao=" + duracao + ", " + super.toString() +
+				" # }";
 	}
 }

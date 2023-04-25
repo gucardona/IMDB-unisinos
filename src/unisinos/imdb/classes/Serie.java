@@ -2,8 +2,7 @@ package unisinos.imdb.classes;
 
 public class Serie extends Audiovisual {
 
-	private int temporadas;
-	private int episodios;
+	private int temporadas, episodios;
 
 	public Serie(String codigo, String nomeDoFilme, String diretor, int ano, Genero genero, String[] principaisAtores,
 			int temporadas, int episodios) {
@@ -31,6 +30,7 @@ public class Serie extends Audiovisual {
 
 	@Override
 	public String toString() {
-		return super.toString();
+		return "{ # SERIE: temporadas=" + temporadas + "episodios=" + episodios + super.toString() +
+				" # }";
 	}
 }
