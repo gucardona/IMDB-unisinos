@@ -3,20 +3,26 @@ package unisinos.imdb.tests;
 import org.junit.Before;
 import org.junit.Test;
 import unisinos.imdb.biblioteca.Biblioteca;
+import unisinos.imdb.midias.Audiovisual;
 import unisinos.imdb.midias.Filme;
 import unisinos.imdb.midias.Genero;
 import unisinos.imdb.midias.Serie;
+import unisinos.imdb.streaming.Categoria;
+import unisinos.imdb.streaming.Streaming;
 
 import static org.junit.Assert.assertEquals;
-
 
 public class AudiovisualTest {
 
     Biblioteca biblioteca = new Biblioteca();
-    ;
     String[] atoresFilme, atoresSerie;
     Filme filme;
     Serie serie;
+
+    Audiovisual[] midias_top250_netflix;
+
+    Categoria[] categorias;
+    Streaming streaming;
 
     @Before
     public void inicializa() {
@@ -47,5 +53,19 @@ public class AudiovisualTest {
 
         biblioteca.removeMidia(biblioteca.getMidia()[1]);
         assertEquals(null, biblioteca.getMidia()[1]);
+    }
+
+    @Test
+    public void testa_streaming() {
+        Audiovisual[] midias_top250_netflix = new Audiovisual[]{filme, serie};
+
+        Categoria top250 = new Categoria("top250", midias_top250_netflix);
+
+        Categoria[] categorias = new Categoria[]{top250};
+
+        Streaming netflix = new Streaming("netflix", categorias);
+
+        assertEquals(filme, netflix.getCategoria()[0].getMidias()[0]);
+        assertEquals(serie, netflix.getCategoria()[0].getMidias()[1]);
     }
 }

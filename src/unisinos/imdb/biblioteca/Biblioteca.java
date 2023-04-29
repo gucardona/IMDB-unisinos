@@ -16,12 +16,8 @@ public class Biblioteca {
         filmes_e_series = new Audiovisual[TAMANHO];
     }
 
-    public void listaMidias() {
-        for (int i = 0; i < filmes_e_series.length; i++) {
-            if (filmes_e_series[i] == null)
-                break;
-            System.out.println(filmes_e_series.toString());
-        }
+    public Audiovisual consultaMidia(int posicao) {
+        return filmes_e_series[posicao];
     }
 
     public void adicionaMidia(Audiovisual midia) {
@@ -41,18 +37,6 @@ public class Biblioteca {
             }
         }
     }
-
-    //    public void ordenaMidias() {
-//        for (int i = 0; i < filmes_e_series.length; i++) {
-//            for (int j = i + 1; j < filmes_e_series.length; j++) {
-//                if (filmes_e_series[i] == null) {
-//                    filmes_e_series[i] = filmes_e_series[j];
-//                    filmes_e_series[j] = null;
-//                }
-//
-//            }
-//        }
-//    }
 
     public Audiovisual[] getMidia() {
         return filmes_e_series;

@@ -1,26 +1,29 @@
 package unisinos.imdb.streaming;
 
-import java.util.Arrays;
+import unisinos.imdb.midias.Audiovisual;
 
 public class Categoria {
-    String[] categorias;
+    String nome;
+    Audiovisual[] midias;
 
-    public Categoria(String[] categorias) {
-        this.categorias = categorias;
+    public Categoria(String nome, Audiovisual[] midias) {
+        this.nome = nome;
+        this.midias = midias;
     }
 
-    public String[] getCategorias() {
-        return categorias;
+    public Audiovisual[] getMidias() {
+        return midias;
     }
 
-    public void setCategorias(String[] categorias) {
-        this.categorias = categorias;
+    public void setMidias(Audiovisual[] midias) {
+        this.midias = midias;
     }
 
-    @Override
-    public String toString() {
-        return "Categoria{" +
-                "categorias=" + Arrays.toString(categorias) +
-                '}';
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

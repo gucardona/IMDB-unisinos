@@ -1,12 +1,16 @@
 package unisinos.imdb.streaming;
 
+import unisinos.imdb.midias.Audiovisual;
+
+import java.util.Arrays;
+
 public class Streaming {
     String nome;
-    Categoria categoria;
+    Categoria[] categorias;
 
-    public Streaming(String nome, Categoria categoria) {
+    public Streaming(String nome, Categoria[] categorias) {
         this.nome = nome;
-        this.categoria = categoria;
+        this.categorias = categorias;
     }
 
     public String getNome() {
@@ -17,19 +21,11 @@ public class Streaming {
         this.nome = nome;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public Categoria[] getCategoria() {
+        return categorias;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    @Override
-    public String toString() {
-        return "Streaming{" +
-                "nome='" + nome + '\'' +
-                ", categoria=" + categoria +
-                '}';
+    public void setCategoria(Categoria[] categoria) {
+        this.categorias = categoria;
     }
 }
