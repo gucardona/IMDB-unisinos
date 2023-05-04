@@ -1,0 +1,42 @@
+{
+  "queryString": "?title\u003dThe%20Office\u0026title_type\u003dtv_series\u0026year\u003d2005\u0026genres\u003dcomedy",
+  "results": [
+    {
+      "id": "tt0386676",
+      "image": "https://m.media-amazon.com/images/M/MV5BMDNkOTE4NDQtMTNmYi00MWE0LWE4ZTktYTc0NzhhNWIzNzJiXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_Ratio0.6837_AL_.jpg",
+      "title": "The Office",
+      "description": "(2005–2013)",
+      "runtimeStr": "22 min",
+      "genres": "Comedy",
+      "genreList": [
+        {
+          "key": "Comedy",
+          "value": "Comedy"
+        }
+      ],
+      "contentRating": "TV-14",
+      "imDbRating": "9.0",
+      "imDbRatingVotes": "636274",
+      "plot": "A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium.",
+      "stars": "Steve Carell, Jenna Fischer, John Krasinski, Rainn Wilson",
+      "starList": [
+        {
+          "id": "tt0386676",
+          "name": "Steve Carell"
+        },
+        {
+          "id": "tt0386676",
+          "name": "Jenna Fischer"
+        },
+        {
+          "id": "tt0386676",
+          "name": "John Krasinski"
+        },
+        {
+          "id": "tt0386676",
+          "name": "Rainn Wilson"
+        }
+      ]
+    }
+  ]
+}

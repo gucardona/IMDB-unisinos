@@ -2,9 +2,12 @@ package unisinos.imdb.main;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonIOException;
+import com.google.gson.JsonObject;
 
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -13,23 +16,15 @@ import java.net.http.HttpResponse.BodyHandlers;
 
 public class AcessoIMDBApi {
 
-    /*
-     * Acesso a Base de Dados IMDB via API
-     *
-     *
-     *  Link Atual: http://www.omdbapi.com/
-     *  Primeiro, cadastre um usu�rio para gerar uma chave de acesso.
-     *  Depois, altere a constante SUA_CHAVE, incluindo a chave gerada.
-     */
-    //Link: https://imdb-api.com/api (Decrecated!)
-
     private static final String SUA_CHAVE = "k_b4e7o4ah";//<Sua chave aqui>";
-    private static String pesquisa = "theoffice";
-    private static Gson gson = new Gson();
 
+    private static final String pesquisa = "The%20Office";
+    private static final String genero = "comedy";
+    private static final String serieOuFilme = "tv_series";
+    private static final int ano = 2005;
 
-    private static final String API_LINK = "https://imdb-api.com/en/API/Search/" + SUA_CHAVE +
-            "/" + pesquisa;
+    private static final String API_LINK = "https://imdb-api.com/en/API/AdvancedSearch/" + SUA_CHAVE + "?title=" + pesquisa +
+            "&title_type=" + serieOuFilme + "&year=" + ano + "&genres=" + genero;
 
     private static final String TOP_250_MOVIES = "https://imdb-api.com/en/API/Top250TVs/" + SUA_CHAVE;
     private static final String TOP_250_TVS = "https://imdb-api.com/en/API/Top250TVs/" + SUA_CHAVE;
@@ -43,6 +38,22 @@ public class AcessoIMDBApi {
             HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
             if (response.statusCode() == 200) {
                 System.out.println(response.body());
+                System.out.println(API_LINK);
+
+                String caminho = "C:\\Users\\Gustavo\\Documents\\projects\\imdb_unisinos\\json.json";
+                Gson gson = new Gson();
+
+                // Analisa string de resposta em um objeto JSON
+                JsonObject json = gson.fromJson(response.body(), JsonObject.class);
+
+                // Escreve objeto JSON em um arquivo
+                FileWriter fw = new FileWriter(caminho);
+                PrintWriter pw = new PrintWriter(fw);
+
+                pw.print(gson.toJson(json));
+
+                pw.close();
+                fw.close();
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
