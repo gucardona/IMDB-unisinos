@@ -9,6 +9,7 @@ import unisinos.imdb.midias.Genero;
 import unisinos.imdb.midias.Serie;
 import unisinos.imdb.streaming.Categoria;
 import unisinos.imdb.streaming.Streaming;
+import unisinos.imdb.streaming.TiposCategorias;
 
 import static org.junit.Assert.assertEquals;
 
@@ -57,11 +58,11 @@ public class AudiovisualTest {
 
     @Test
     public void testa_streaming() {
-        Audiovisual[] midias_top250_netflix = new Audiovisual[]{filme, serie};
+        Audiovisual[] midias_top10br = new Audiovisual[]{filme, serie};
 
-        Categoria top250 = new Categoria("top250", midias_top250_netflix);
+        Categoria top10br = new Categoria(TiposCategorias.TOP_10_BRASIL, midias_top10br);
 
-        Categoria[] categorias = new Categoria[]{top250};
+        Categoria[] categorias = new Categoria[]{top10br};
 
         Streaming netflix = new Streaming("netflix", categorias);
 

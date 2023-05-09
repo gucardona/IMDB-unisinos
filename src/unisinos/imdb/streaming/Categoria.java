@@ -3,11 +3,11 @@ package unisinos.imdb.streaming;
 import unisinos.imdb.midias.Audiovisual;
 
 public class Categoria {
-    String nome;
+    TiposCategorias tipo;
     Audiovisual[] midias;
 
-    public Categoria(String nome, Audiovisual[] midias) {
-        this.nome = nome;
+    public Categoria(TiposCategorias tipo, Audiovisual[] midias) {
+        this.tipo = tipo;
         this.midias = midias;
     }
 
@@ -19,11 +19,11 @@ public class Categoria {
         this.midias = midias;
     }
 
-    public String getNome() {
-        return nome;
+    public TiposCategorias getTipo() {
+        return tipo;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setTipo(TiposCategorias tipo) {
+        this.tipo = tipo;
     }
 }

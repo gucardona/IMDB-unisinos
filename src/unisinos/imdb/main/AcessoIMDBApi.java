@@ -1,6 +1,7 @@
 package unisinos.imdb.main;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonObject;
 
@@ -13,6 +14,10 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
 
 public class AcessoIMDBApi {
 
@@ -40,17 +45,10 @@ public class AcessoIMDBApi {
                 System.out.println(response.body());
                 System.out.println(API_LINK);
 
-                String caminho = "C:\\Users\\Gustavo\\Documents\\projects\\imdb_unisinos\\json.json";
-                Gson gson = new Gson();
-
-                // Analisa string de resposta em um objeto JSON
-                JsonObject json = gson.fromJson(response.body(), JsonObject.class);
-
-                // Escreve objeto JSON em um arquivo
-                FileWriter fw = new FileWriter(caminho);
+                FileWriter fw = new FileWriter("json.json");
                 PrintWriter pw = new PrintWriter(fw);
 
-                pw.print(gson.toJson(json));
+                pw.print(response.body());
 
                 pw.close();
                 fw.close();
