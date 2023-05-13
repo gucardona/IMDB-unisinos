@@ -19,5 +19,15 @@
     </orderEntry>
     <orderEntry type="library" name="gson-2.10.1" level="project" />
     <orderEntry type="library" name="gson-2.10.1" level="project" />
+    <orderEntry type="library" name="jackson-databind-2.15.0" level="project" />
+    <orderEntry type="library" name="jackson-dataformat-csv-2.15.0" level="project" />
+    <orderEntry type="library" name="jackson-core-2.15.0" level="project" />
+    <orderEntry type="library" name="org.json-chargebee-1.0" level="project" />
+    <orderEntry type="library" name="jackson-annotations-2.15.0" level="project" />
+    <orderEntry type="library" name="jackson-dataformat-csv-2.15.0 (2)" level="project" />
+    <orderEntry type="library" name="opencsv-5.7.1" level="project" />
+    <orderEntry type="library" name="jackson-core-2.15.0 (2)" level="project" />
+    <orderEntry type="library" name="opencsv-5.7.1 (2)" level="project" />
+    <orderEntry type="library" name="jackson-annotations-2.15.0 (2)" level="project" />
   </component>
 </module>
