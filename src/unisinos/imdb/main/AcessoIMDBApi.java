@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.opencsv.CSVWriter;
 import operations.CsvWriting;
+import operations.SerieOuFilme;
 
 import java.io.*;
 import java.net.URI;
@@ -20,14 +21,14 @@ public class AcessoIMDBApi {
 
     private static final String SUA_CHAVE = "k_b4e7o4ah";//<Sua chave aqui>";
 
-    private static final String pesquisa = Teclado.leString("Qual o nome da mídia que deseja buscar?")
+    private static final String pesquisa = Teclado.leString("Nome da mídia: ")
             .toLowerCase().replace(" ", "%20");
-    private static final String genero = Teclado.leString("Qual o gênero? (Em Inglês)").toLowerCase();
-    private static final String serieOuFilme = Teclado.leString("Série ou filme? (Escreva tv_series ou tv_movies)").toLowerCase();
-    private static final int ano = Teclado.leInt("Qual o ano?");
+    //private static final String genero = Teclado.leString("Gênero: (Em Inglês) ").toLowerCase();
+    private static final String serieOuFilme = SerieOuFilme.consulta();
+    private static final int ano = Teclado.leInt("Ano: ");
 
     private static final String API_LINK = "https://imdb-api.com/en/API/AdvancedSearch/" + SUA_CHAVE + "?title=" + pesquisa +
-            "&title_type=" + serieOuFilme + "&year=" + ano + "&genres=" + genero;
+            "&title_type=" + serieOuFilme + "&year=" + ano + "&genres=" + "&count=1";
 
     private static final String TOP_250_MOVIES = "https://imdb-api.com/en/API/Top250TVs/" + SUA_CHAVE;
     private static final String TOP_250_TVS = "https://imdb-api.com/en/API/Top250TVs/" + SUA_CHAVE;
